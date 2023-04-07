@@ -1,19 +1,19 @@
-### 使用Golang和MongoDB构建 RESTful API
+### Build a RESTful API with Golang and MongoDB
 
-记录一下创建 **RESTful API**使用 `Go`开发语言和 `MongoDB`后台数据库  
+Record the creation **RESTful API** use `Go`development language and `MongoDB` database  
 
-[完整代码 Github](https://github.com/coderminer/restful)  
+[完整代码 Github](https://github.com/bomber0325/restful)  
 
-![](http://7xplrz.com1.z0.glb.clouddn.com//corderminer/website/golang_restful_api.png)
+![](http://7xplrz.com1.z0.glb.clouddn.com//bomber0325/website/golang_restful_api.png)
 
-#### 安装依赖  
+#### install dependencies  
 
 ```
-go get github.com/globalsign/mgo  // MongoDB的Go语言驱动
-go get github.com/gorilla/mux   // Go语言的http路由库
+go get github.com/globalsign/mgo  // Go language driver for MongoDB
+go get github.com/gorilla/mux   // Go language http routing library
 ```
 
-#### API 结构预览
+#### API structure
 
 `app.go`  
 
@@ -61,12 +61,11 @@ func main() {
 
 ```
 
-随着后续路由的增加，需要重构一个这个文件，仿照 `beego`的工程目录，我们也分别创建对应的 `controllers`
-和 `routes`,改造一下上面的代码
+As subsequent routes are added, this file will need to be refactored. Like the project directory of `beego`, we also create the corresponding `controllers` and `routes`, modify the code above
 
 * 控制器
 
-创建 `controllers` 文件夹和对应的文件 `movies.go`  
+Create `controllers` folder and corresponding file `movies.go`
 
 `movies.go`
 
@@ -92,9 +91,9 @@ func DeleteMovie(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-* 路由
+* routing
 
-创建一个 `routes`文件夹，并创建对应的文件 `routes.go`  
+Create a `routes` folder and create a corresponding file `routes.go`
 
 `routes.go`  
 
@@ -144,7 +143,7 @@ func register(method, pattern string, handler http.HandlerFunc, middleware mux.M
 
 ```
 
-重构后的 `app.go`  
+refactored `app.go`  
 
 ```
 package main
@@ -164,7 +163,7 @@ func main() {
 
 #### Models
 
-* 创建 `models` 文件夹和对应的文件 `db.go`(数据层)，封装对`MongoDB`的封装  
+* Create the `models` folder and the corresponding file `db.go` (data layer), encapsulating the encapsulation of `MongoDB`
 
 ```
 package models
@@ -236,7 +235,7 @@ func Remove(db, collection string, query interface{}) error {
 
 ```
 
-* 业务逻辑层  `models/movies.go`
+* business logic layer  `models/movies.go`
 
 ```
 package models
@@ -281,7 +280,7 @@ func (m *Movies) RemoveMovie(id string) error {
 
 ```
 
-#### 控制器逻辑  
+#### controller logic  
 
 * CreateMovie
 
@@ -302,7 +301,7 @@ func CreateMovie(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-使用 `Postman` 或 `curl`进行测试
+Test with `Postman` or `curl`
 
 * AllMovies
 
