@@ -2,7 +2,7 @@
 
 Record the creation **RESTful API** use `Go`development language and `MongoDB` database  
 
-[完整代码 Github](https://github.com/bomber0325/restful)  
+[Github](https://github.com/bomber0325/restful)  
 
 ![](http://7xplrz.com1.z0.glb.clouddn.com//bomber0325/website/golang_restful_api.png)
 
