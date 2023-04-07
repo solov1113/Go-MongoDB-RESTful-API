@@ -2,10 +2,6 @@
 
 Record the creation **RESTful API** use `Go`development language and `MongoDB` database  
 
-[Github](https://github.com/bomber0325/restful)  
-
-![](http://7xplrz.com1.z0.glb.clouddn.com//bomber0325/website/golang_restful_api.png)
-
 #### install dependencies  
 
 ```
@@ -63,7 +59,7 @@ func main() {
 
 As subsequent routes are added, this file will need to be refactored. Like the project directory of `beego`, we also create the corresponding `controllers` and `routes`, modify the code above
 
-* 控制器
+* controller
 
 Create `controllers` folder and corresponding file `movies.go`
 
